@@ -172,6 +172,17 @@ nav a {
   color: var(--muted);
 }
 
+nav a.nav-download {
+  align-items: center;
+  background: var(--wine);
+  border-radius: 8px;
+  color: white;
+  display: inline-flex;
+  font-weight: 700;
+  min-height: 36px;
+  padding: 0 14px;
+}
+
 .hero {
   min-height: calc(100vh - 76px);
   display: grid;
