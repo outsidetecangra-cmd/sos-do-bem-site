@@ -2,9 +2,9 @@
 
 Site estatico para GitHub Pages.
 
-URL do grupo:
+Contato da coordenacao:
 
-`https://chat.whatsapp.com/IbwKbmCVB9DDcmzAGxJtmb`
+aguardando autorizacao dos responsaveis.
 
 Depois do deploy, o site fica em:
 
