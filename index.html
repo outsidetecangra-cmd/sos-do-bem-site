@@ -10,7 +10,7 @@
 <body>
   <header class="topbar">
     <a class="brand" href="#inicio" aria-label="S.O.S do Bem">
-      <span class="brand-mark" aria-hidden="true">❤</span>
+      <img class="brand-logo" src="assets/logo/logo-sos-do-bem.svg" alt="">
       <span>
         <strong>S.O.S do Bem</strong>
         <small>Servico de Obras Sociais</small>
@@ -35,15 +35,22 @@
           <a class="btn secondary" href="#campanhas">Ver campanhas</a>
         </div>
       </div>
-      <div class="hero-card" aria-label="Marca S.O.S do Bem">
-        <div class="swirl">
-          <span class="arc wine"></span>
-          <span class="arc green"></span>
-          <span class="heart">❤</span>
-        </div>
-        <strong>S.O.S do Bem</strong>
-        <small>Servico de Obras Sociais</small>
+      <div class="hero-card logo-panel" aria-label="Marca S.O.S do Bem">
+        <img src="assets/logo/logo-sos-do-bem.svg" alt="S.O.S do Bem - Servico de Obras Sociais">
       </div>
+    </section>
+
+    <section class="section carousel-section" aria-label="Fotos e acoes do S.O.S do Bem">
+      <div class="section-head">
+        <p class="eyebrow">Galeria</p>
+        <h2>Acoes do S.O.S do Bem</h2>
+      </div>
+      <div class="carousel" data-carousel>
+        <button class="carousel-btn prev" type="button" aria-label="Imagem anterior">‹</button>
+        <img id="carouselImage" src="assets/logo/logo-sos-do-bem.svg" alt="Imagem do S.O.S do Bem">
+        <button class="carousel-btn next" type="button" aria-label="Proxima imagem">›</button>
+      </div>
+      <p class="carousel-note">Para atualizar esta galeria, adicione imagens na pasta <strong>assets/carrossel</strong>.</p>
     </section>
 
     <section class="stats" aria-label="Areas de atuacao">
@@ -123,5 +130,6 @@
     <strong>S.O.S do Bem</strong>
     <span>Ajuda rapida, uniao real.</span>
   </footer>
+  <script src="assets/site.js"></script>
 </body>
 </html>
