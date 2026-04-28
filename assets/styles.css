@@ -51,8 +51,8 @@ button:focus-visible {
 }
 
 .splash-logo {
-  width: min(76vw, 520px);
-  max-height: 34vh;
+  width: min(94vw, 1040px);
+  max-height: 68vh;
   object-fit: contain;
   animation: logoSweet 3.1s ease forwards;
   filter: drop-shadow(0 18px 28px rgba(134, 37, 66, 0.18));
