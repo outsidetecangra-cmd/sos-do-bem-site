@@ -4,7 +4,7 @@
   const nextButton = document.querySelector(".carousel-btn.next");
   const intervalMs = 1500;
   const resumeDelayMs = 5000;
-  const candidates = [
+  const fallbackSlides = [
     "assets/carrossel/slide1.jpg.jpeg",
     "assets/carrossel/slide2.jpg.jpeg",
     "assets/carrossel/slide3.jpg.jpeg",
@@ -33,6 +33,27 @@
       img.onerror = () => resolve(null);
       img.src = src;
     });
+  }
+
+  function normalizeSlide(src) {
+    if (typeof src !== "string") return null;
+    const cleanSrc = src.trim();
+    if (!cleanSrc || cleanSrc.startsWith("http:")) return null;
+    return cleanSrc;
+  }
+
+  async function loadSlideList() {
+    try {
+      const response = await fetch(`data/carousel.json?v=${Date.now()}`, {
+        cache: "no-store"
+      });
+      if (!response.ok) throw new Error("Carousel data unavailable");
+      const data = await response.json();
+      const remoteSlides = Array.isArray(data.slides) ? data.slides.map(normalizeSlide).filter(Boolean) : [];
+      return remoteSlides.length ? remoteSlides : fallbackSlides;
+    } catch (error) {
+      return fallbackSlides;
+    }
   }
 
   function showSlide(index) {
@@ -64,7 +85,7 @@
     startAutoPlay();
   }
 
-  Promise.all(candidates.map(testImage)).then(results => {
+  loadSlideList().then(candidates => Promise.all(candidates.map(testImage))).then(results => {
     slides = results.filter(Boolean);
     if (slides.length) showSlide(0);
     startAutoPlay();
