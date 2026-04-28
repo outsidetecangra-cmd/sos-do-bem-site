@@ -101,15 +101,25 @@
   const counter = document.getElementById("visitCounter");
   if (!counter) return;
 
-  const counterUrl = "https://counterapi.com/api/sos-do-bem/visit/total?startNumber=74";
+  const counterUrl = "https://visitor.6developer.com/visit";
 
-  fetch(counterUrl, { cache: "no-store" })
+  fetch(counterUrl, {
+    method: "POST",
+    cache: "no-store",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      domain: "sos-do-bem-site",
+      page_path: "/site"
+    })
+  })
     .then(response => {
       if (!response.ok) throw new Error("Visit counter unavailable");
       return response.json();
     })
     .then(data => {
-      const value = Number(data.value);
+      const value = Number(data.totalCount) + 74;
       if (Number.isFinite(value) && value > 74) {
         counter.textContent = value.toLocaleString("pt-BR");
       }
