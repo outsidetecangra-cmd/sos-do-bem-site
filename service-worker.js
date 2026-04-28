@@ -1,4 +1,4 @@
-const CACHE_NAME = "sos-do-bem-v3";
+const CACHE_NAME = "sos-do-bem-v4";
 const FRESH_PATHS = [
   "/",
   "/index.html",
