@@ -3,6 +3,7 @@
   const prevButton = document.querySelector(".carousel-btn.prev");
   const nextButton = document.querySelector(".carousel-btn.next");
   const intervalMs = 1500;
+  const resumeDelayMs = 5000;
   const candidates = [
     "assets/carrossel/slide1.jpg.jpeg",
     "assets/carrossel/slide2.jpg.jpeg",
@@ -23,6 +24,7 @@
   let slides = [];
   let current = 0;
   let timer = null;
+  let resumeTimer = null;
 
   function testImage(src) {
     return new Promise(resolve => {
@@ -45,9 +47,16 @@
 
   function startAutoPlay() {
     window.clearInterval(timer);
+    window.clearTimeout(resumeTimer);
     timer = window.setInterval(() => {
       if (slides.length > 1) showSlide(current + 1);
     }, intervalMs);
+  }
+
+  function pauseThenResume() {
+    window.clearInterval(timer);
+    window.clearTimeout(resumeTimer);
+    resumeTimer = window.setTimeout(startAutoPlay, resumeDelayMs);
   }
 
   function manualSlide(index) {
@@ -63,4 +72,6 @@
 
   prevButton.addEventListener("click", () => manualSlide(current - 1));
   nextButton.addEventListener("click", () => manualSlide(current + 1));
+  carouselImage.addEventListener("click", pauseThenResume);
+  carouselImage.addEventListener("touchstart", pauseThenResume, { passive: true });
 })();
