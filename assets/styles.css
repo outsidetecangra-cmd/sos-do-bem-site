@@ -183,6 +183,17 @@ nav a.nav-download {
   padding: 0 14px;
 }
 
+.nav-visits {
+  align-items: center;
+  border: 1px solid rgba(134, 37, 66, 0.22);
+  border-radius: 8px;
+  color: var(--wine);
+  display: inline-flex;
+  font-weight: 700;
+  min-height: 36px;
+  padding: 0 12px;
+}
+
 .hero {
   min-height: calc(100vh - 76px);
   display: grid;
