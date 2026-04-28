@@ -1,0 +1,17 @@
+{
+  "name": "S.O.S do Bem",
+  "short_name": "S.O.S do Bem",
+  "description": "Rede comunitaria para apoio, doacoes, voluntarios e campanhas sociais.",
+  "start_url": "./",
+  "scope": "./",
+  "display": "standalone",
+  "background_color": "#fff8f8",
+  "theme_color": "#862542",
+  "icons": [
+    {
+      "src": "assets/logo/logo-sos-do-bem.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    }
+  ]
+}
