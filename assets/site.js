@@ -98,8 +98,8 @@
 })();
 
 (() => {
-  const counter = document.getElementById("visitCounter");
-  if (!counter) return;
+  const counters = Array.from(document.querySelectorAll(".visitCounterValue"));
+  if (!counters.length) return;
 
   const counterUrl = "https://visitor.6developer.com/visit";
 
@@ -121,10 +121,14 @@
     .then(data => {
       const value = Number(data.totalCount) + 74;
       if (Number.isFinite(value) && value > 74) {
-        counter.textContent = value.toLocaleString("pt-BR");
+        counters.forEach(counter => {
+          counter.textContent = value.toLocaleString("pt-BR");
+        });
       }
     })
     .catch(() => {
-      counter.textContent = "75+";
+      counters.forEach(counter => {
+        counter.textContent = "75+";
+      });
     });
 })();
