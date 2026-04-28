@@ -37,6 +37,89 @@ button:focus-visible {
   outline-offset: 3px;
 }
 
+.splash {
+  position: fixed;
+  inset: 0;
+  z-index: 999;
+  display: grid;
+  place-items: center;
+  align-content: center;
+  gap: 22px;
+  padding: 28px;
+  background: radial-gradient(circle at center, #fffaf4 0, var(--cream) 52%, #f4eadf 100%);
+  animation: splashGone 900ms ease 4.6s forwards;
+}
+
+.splash-logo {
+  width: min(76vw, 520px);
+  max-height: 34vh;
+  object-fit: contain;
+  animation: logoSweet 3.1s ease forwards;
+  filter: drop-shadow(0 18px 28px rgba(134, 37, 66, 0.18));
+}
+
+.splash strong {
+  color: var(--wine);
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: clamp(36px, 8vw, 74px);
+  text-align: center;
+  opacity: 0;
+  transform: translateY(16px);
+  animation: motherText 900ms ease 2.9s forwards;
+}
+
+.splash-hearts {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+}
+
+.splash-hearts span {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  color: var(--wine);
+  font-size: 32px;
+  opacity: 0;
+  transform: translate(-50%, -50%) scale(0.2);
+  animation: heartFloat 1.8s ease 1.45s forwards;
+}
+
+.splash-hearts span:nth-child(2) { color: #c75a58; --x: -120px; --y: -120px; animation-delay: 1.5s; }
+.splash-hearts span:nth-child(3) { color: var(--gold); --x: 90px; --y: -135px; animation-delay: 1.58s; }
+.splash-hearts span:nth-child(4) { color: var(--green); --x: 140px; --y: -30px; animation-delay: 1.66s; }
+.splash-hearts span:nth-child(5) { color: #c75a58; --x: 100px; --y: 105px; animation-delay: 1.74s; }
+.splash-hearts span:nth-child(6) { color: var(--wine); --x: -105px; --y: 95px; animation-delay: 1.82s; }
+.splash-hearts span:nth-child(7) { color: var(--green); --x: -155px; --y: -20px; animation-delay: 1.9s; }
+.splash-hearts span:nth-child(8) { color: var(--gold); --x: 0; --y: -155px; animation-delay: 1.98s; }
+.splash-hearts span:nth-child(9) { color: var(--wine); --x: 0; --y: 130px; animation-delay: 2.06s; }
+
+.splash-hearts span:first-child {
+  --x: -45px;
+  --y: -60px;
+}
+
+@keyframes logoSweet {
+  0% { opacity: 0; transform: scale(0.82); }
+  28% { opacity: 1; transform: scale(1); }
+  58% { opacity: 1; transform: scale(0.95); }
+  100% { opacity: 0; transform: scale(0.32) translateY(-42px); }
+}
+
+@keyframes heartFloat {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.2); }
+  35% { opacity: 1; }
+  100% { opacity: 0; transform: translate(calc(-50% + var(--x, 45px)), calc(-50% + var(--y, -80px))) scale(1.25); }
+}
+
+@keyframes motherText {
+  to { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes splashGone {
+  to { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+
 .topbar {
   position: sticky;
   top: 0;
