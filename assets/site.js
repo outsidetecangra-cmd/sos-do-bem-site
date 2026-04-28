@@ -1,5 +1,11 @@
 const carouselImage = document.getElementById("carouselImage");
 const candidates = [
+  "assets/carrossel/slide1.jpg.jpeg",
+  "assets/carrossel/slide2.jpg.jpeg",
+  "assets/carrossel/slide3.jpg.jpeg",
+  "assets/carrossel/slide4.jpg.jpeg",
+  "assets/carrossel/slide5.jpg.jpeg",
+  "assets/carrossel/slide6.jpg.jpeg",
   "assets/carrossel/slide1.jpg",
   "assets/carrossel/slide2.jpg",
   "assets/carrossel/slide3.jpg",
