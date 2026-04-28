@@ -43,16 +43,28 @@ button:focus-visible {
   z-index: 999;
   display: grid;
   place-items: center;
-  align-content: center;
-  gap: 22px;
   padding: 28px;
   background: radial-gradient(circle at center, #fffaf4 0, var(--cream) 52%, #f4eadf 100%);
   animation: splashGone 900ms ease 5.3s forwards;
 }
 
+.splash-content {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  gap: clamp(18px, 4vh, 34px);
+  justify-content: center;
+  max-width: min(92vw, 720px);
+  min-height: min(78vh, 720px);
+  position: relative;
+  text-align: center;
+  width: 100%;
+}
+
 .splash-logo {
-  width: min(94vw, 1040px);
-  max-height: 68vh;
+  display: block;
+  width: min(82vw, 520px);
+  max-height: 46vh;
   object-fit: contain;
   animation: logoSweet 3.1s ease forwards;
   filter: drop-shadow(0 18px 28px rgba(134, 37, 66, 0.18));
@@ -62,9 +74,11 @@ button:focus-visible {
   color: var(--wine);
   font-family: Georgia, 'Times New Roman', serif;
   font-size: clamp(36px, 8vw, 74px);
+  line-height: 1.05;
+  max-width: 100%;
   text-align: center;
   opacity: 0;
-  transform: translateY(34px) scale(0.98);
+  transform: translateY(18px) scale(0.98);
   animation: motherText 1600ms ease 2.9s forwards;
 }
 
@@ -103,7 +117,7 @@ button:focus-visible {
   0% { opacity: 0; transform: scale(0.82); }
   28% { opacity: 1; transform: scale(1); }
   58% { opacity: 1; transform: scale(0.95); }
-  100% { opacity: 0; transform: scale(0.32) translateY(-42px); }
+  100% { opacity: 0; transform: scale(0.42); }
 }
 
 @keyframes heartFloat {
@@ -113,13 +127,33 @@ button:focus-visible {
 }
 
 @keyframes motherText {
-  0% { opacity: 0; transform: translateY(34px) scale(0.98); }
+  0% { opacity: 0; transform: translateY(18px) scale(0.98); }
   55% { opacity: 1; }
-  100% { opacity: 1; transform: translateY(-26px) scale(1.02); }
+  100% { opacity: 1; transform: translateY(0) scale(1); }
 }
 
 @keyframes splashGone {
   to { opacity: 0; visibility: hidden; pointer-events: none; }
+}
+
+@media (max-width: 520px) {
+  .splash {
+    padding: 18px;
+  }
+
+  .splash-content {
+    gap: 18px;
+    min-height: 72vh;
+  }
+
+  .splash-logo {
+    width: min(78vw, 360px);
+    max-height: 36vh;
+  }
+
+  .splash strong {
+    font-size: clamp(34px, 10vw, 48px);
+  }
 }
 
 .topbar {
