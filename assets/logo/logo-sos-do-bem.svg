@@ -1,0 +1,35 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 520" role="img" aria-labelledby="title desc">
+  <title id="title">S.O.S do Bem</title>
+  <desc id="desc">Logo do S.O.S do Bem, Servico de Obras Sociais</desc>
+  <defs>
+    <linearGradient id="gold" x1="0" x2="1">
+      <stop offset="0" stop-color="#b17a22"/>
+      <stop offset="0.5" stop-color="#f2cf75"/>
+      <stop offset="1" stop-color="#a96f1c"/>
+    </linearGradient>
+    <linearGradient id="wine" x1="0" x2="1">
+      <stop offset="0" stop-color="#862542"/>
+      <stop offset="1" stop-color="#c75a58"/>
+    </linearGradient>
+    <linearGradient id="green" x1="0" x2="1">
+      <stop offset="0" stop-color="#6f8a5d"/>
+      <stop offset="1" stop-color="#245b43"/>
+    </linearGradient>
+    <filter id="soft" x="-30%" y="-30%" width="160%" height="160%">
+      <feDropShadow dx="0" dy="10" stdDeviation="12" flood-color="#3b2d26" flood-opacity="0.25"/>
+    </filter>
+  </defs>
+  <rect width="1200" height="520" fill="#faf5ef"/>
+  <g filter="url(#soft)">
+    <path fill="url(#wine)" d="M466 132c55-90 173-118 273-62-91-12-169 10-215 78-24 34-30 76-16 119-49-43-58-92-42-135z"/>
+    <path fill="#d76665" d="M565 139c50-55 136-70 210-28-65-3-116 16-151 59-13 16-29 22-48 18-19-5-23-23-11-49z"/>
+    <path fill="url(#green)" d="M430 272c65 96 185 126 286 71-101 13-184-23-234-93-22-30-46-48-71-53-18-3-23 33 19 75z"/>
+    <path fill="#245b43" d="M635 352c77-19 127-75 142-150 43 18 49 94-11 148-40 36-88 48-131 35-16-5-16-28 0-33z"/>
+    <path fill="url(#gold)" d="M602 291c-55-39-85-67-85-104 0-35 25-55 55-55 18 0 31 10 39 27 9-17 23-27 42-27 30 0 54 20 54 55 0 37-38 71-105 104z"/>
+  </g>
+  <text x="165" y="405" fill="#862542" font-family="Georgia, 'Times New Roman', serif" font-size="142" letter-spacing="10">S.O.S</text>
+  <text x="610" y="405" fill="url(#gold)" stroke="#8b5e1d" stroke-width="2" font-family="'Brush Script MT', 'Segoe Script', cursive" font-size="126">do Bem</text>
+  <line x1="225" y1="448" x2="295" y2="448" stroke="#3b2d26" stroke-width="5"/>
+  <text x="315" y="463" fill="#111" stroke="#fff" stroke-width="2" paint-order="stroke" font-family="Arial, Helvetica, sans-serif" font-size="42" font-weight="700" letter-spacing="8">SERVICO DE OBRAS SOCIAIS</text>
+  <line x1="875" y1="448" x2="945" y2="448" stroke="#3b2d26" stroke-width="5"/>
+</svg>
