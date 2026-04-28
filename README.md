@@ -4,7 +4,7 @@ Site estatico para GitHub Pages.
 
 Contato da coordenacao:
 
-aguardando autorizacao dos responsaveis.
+`https://wa.me/5521998188777`
 
 Depois do deploy, o site fica em:
 
