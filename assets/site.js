@@ -96,3 +96,25 @@
   carouselImage.addEventListener("click", pauseThenResume);
   carouselImage.addEventListener("touchstart", pauseThenResume, { passive: true });
 })();
+
+(() => {
+  const counter = document.getElementById("visitCounter");
+  if (!counter) return;
+
+  const counterUrl = "https://counterapi.com/api/sos-do-bem/visit/total?startNumber=74";
+
+  fetch(counterUrl, { cache: "no-store" })
+    .then(response => {
+      if (!response.ok) throw new Error("Visit counter unavailable");
+      return response.json();
+    })
+    .then(data => {
+      const value = Number(data.value);
+      if (Number.isFinite(value) && value > 74) {
+        counter.textContent = value.toLocaleString("pt-BR");
+      }
+    })
+    .catch(() => {
+      counter.textContent = "75+";
+    });
+})();
