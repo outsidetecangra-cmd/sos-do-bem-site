@@ -31,6 +31,12 @@ a {
   color: inherit;
 }
 
+a:focus-visible,
+button:focus-visible {
+  outline: 3px solid var(--gold);
+  outline-offset: 3px;
+}
+
 .topbar {
   position: sticky;
   top: 0;
@@ -64,8 +70,8 @@ a {
 }
 
 .brand-logo {
-  width: 64px;
-  height: 42px;
+  width: 86px;
+  height: 48px;
   object-fit: contain;
 }
 
@@ -183,7 +189,9 @@ h3 {
 .carousel {
   position: relative;
   overflow: hidden;
-  min-height: 360px;
+  width: min(100%, 560px);
+  min-height: 620px;
+  margin: 0 auto;
   display: grid;
   place-items: center;
   background: var(--paper);
@@ -194,12 +202,15 @@ h3 {
 
 .carousel img {
   width: 100%;
-  height: min(62vw, 520px);
-  object-fit: cover;
+  height: min(118vw, 680px);
+  object-fit: contain;
   display: block;
+  background: var(--paper);
+  transition: opacity 180ms ease;
 }
 
-.carousel img[src$=".svg"] {
+.carousel img[src$=".svg"],
+.carousel img[src*="logo-sos-do-bem"] {
   object-fit: contain;
   padding: 28px;
   background: var(--paper);
@@ -219,6 +230,10 @@ h3 {
   line-height: 1;
   cursor: pointer;
   transform: translateY(-50%);
+}
+
+.carousel-btn:hover {
+  background: rgba(101, 26, 49, 0.94);
 }
 
 .carousel-btn.prev {
@@ -333,5 +348,18 @@ footer {
 
   .hero {
     min-height: auto;
+  }
+
+  nav {
+    gap: 10px;
+  }
+
+  .carousel {
+    width: 100%;
+    min-height: 420px;
+  }
+
+  .carousel img {
+    height: min(132vw, 560px);
   }
 }
