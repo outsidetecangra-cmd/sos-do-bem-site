@@ -357,7 +357,7 @@ h3 {
 
 .stats {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: 14px;
   padding-top: 0;
 }
@@ -382,6 +382,10 @@ h3 {
 .rules,
 .split p {
   color: var(--muted);
+}
+
+.visit-counter strong span {
+  color: var(--wine);
 }
 
 .section-head {
