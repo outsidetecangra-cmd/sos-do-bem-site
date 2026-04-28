@@ -18,4 +18,4 @@ Se o Windows salvar como `.jpg.jpeg`, o site tambem carrega:
 - slide5.jpg.jpeg
 - slide6.jpg.jpeg
 
-Use fotos em formato paisagem quando possivel.
+Use fotos em formato retrato sempre que possível.
