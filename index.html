@@ -12,6 +12,7 @@
   <meta name="theme-color" content="#862542">
   <link rel="icon" type="image/svg+xml" href="assets/logo/favicon.svg">
   <link rel="shortcut icon" href="assets/logo/favicon.svg">
+  <link rel="manifest" href="manifest.webmanifest?v=20260428-3">
   <link rel="stylesheet" href="assets/styles.css">
 </head>
 <body>
@@ -37,6 +38,7 @@
       <a href="#doacoes">Doa&ccedil;&otilde;es</a>
       <a href="#voluntarios">Volunt&aacute;rios</a>
       <a href="#regras">Regras</a>
+      <a class="nav-download" href="downloads/sos-do-bem-app.apk" download>Nosso app</a>
     </nav>
   </header>
 
@@ -147,6 +149,15 @@
     <span>Ajuda r&aacute;pida, uni&atilde;o real.</span>
     <span>Desenvolvido por OutSideTec Corp.LG</span>
   </footer>
-  <script src="assets/site.js" defer></script>
+  <script src="assets/site.js?v=20260428-3" defer></script>
+  <script>
+    if ("serviceWorker" in navigator) {
+      window.addEventListener("load", () => {
+        navigator.serviceWorker.register("service-worker.js?v=20260428-3").then(registration => {
+          registration.update();
+        });
+      });
+    }
+  </script>
 </body>
 </html>
